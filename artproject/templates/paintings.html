@@ -1,0 +1,254 @@
+{% include 'navbar.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<title>Paintings</title>
+  <script>
+  // Get all card buttons
+  const cardButtons = document.querySelectorAll('.card__btn');
+
+  // Add a click event listener to each button
+  cardButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Replace this alert with your desired functionality
+      alert('Button Clicked! Add your custom action here.');
+    });
+  });
+</script>
+    <style>
+        :root{
+  --background-dark: #2d3548;
+  --text-light: rgba(255,255,255,0.6);
+  --text-lighter: rgba(255,255,255,0.9);
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+  --width-container: 1200px;
+}
+.card__button {
+  text-align: center;
+  margin-top: var(--spacing-m); /* Add spacing between the heading and button */
+}
+
+.card__btn {
+  background-color: #4caf50; /* Button background color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Padding around the button text */
+  border: none; /* Remove button border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Change cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.card__btn:hover {
+  background-color: #45a049; /* Darker color on hover */
+}
+*{
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+body{
+  height: 100%;
+}
+
+.hero-section{
+  align-items: flex-start;
+  background-image: linear-gradient(15deg, #0f4667 0%, #2a6973 150%);
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-l);
+}
+
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--spacing-l);
+  grid-row-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  width: 100%;
+}
+
+@media(min-width: 540px){
+  .card-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(min-width: 960px){
+  .card-grid{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card{
+  list-style: none;
+  position: relative;
+}
+
+.card:before{
+  content: '';
+  display: block;
+  padding-bottom: 150%;
+  width: 100%;
+}
+
+.card__background{
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--spacing-l);
+  bottom: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center;
+  trsnsform: scale(1) translateZ(0);
+  transition:
+    filter 200ms linear,
+    transform 200ms linear;
+}
+
+.card:hover .card__background{
+  transform: scale(1.05) translateZ(0);
+}
+
+.card-grid:hover > .card:not(:hover) .card__background{
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.card__content{
+  left: 0;
+  padding: var(--spacing-l);
+  position: absolute;
+  top: 0;
+}
+
+.card__category{
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-s);
+  text-transform: uppercase;
+}
+
+.card__heading{
+  color: var(--text-lighter);
+  font-size: 1.9rem;
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+  line-height: 1.4;
+  word-spacing: 100vw;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.navbar-list {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-item {
+  margin-right: 1rem;
+}
+
+.navbar-item a {
+  color: #000;
+  text-decoration: none;
+}
+
+.cart-button {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid #000;
+  border-radius: 0.5rem;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.cart-button:hover {
+  background-color: #ccc;
+}
+
+.cart-button .cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #f00;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  line-height: 20px;
+}
+    </style>
+</head>
+<body>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<!--<button class="coursebutton">-->
+<!--<a href="{% url '' %}" align="center ">Add Paintings</a>-->
+</button>
+<section class="hero-section">
+  <div class="card-grid">
+    <a class="card" href="{% url 'oilpaintings' %}">
+      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557177324-56c542165309?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)"></div>
+      <div class="card__content">
+        <p class="card__heading">Oil Paintings</p>
+        <div class="card__button">
+      <button class="card__btn">View Details</button>
+    </div>
+      </div>
+    </a>
+    <a class="card" href="{% url 'pencilpaintings' %}">
+      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557187666-4fd70cf76254?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
+      <div class="card__content">
+        <p class="card__heading">Pencil Paintings</p>
+        <div class="card__button">
+      <button class="card__btn">View Details</button>
+    </div>
+      </div>
+    </a>
+    <a class="card" href="{% url 'glasspaintings' %}">
+      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1556680262-9990363a3e6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
+      <div class="card__content">
+        <p class="card__heading">Glass Paintings</p>
+        <div class="card__button">
+      <button class="card__btn">View Details</button>
+    </div>
+      </div>
+    </a>
+    <a class="card" href="{% url 'waterpaintings' %}">
+      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557004396-66e4174d7bf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
+      <div class="card__content">
+        <h3 class="card__heading">Water Color Paintings</h3>
+        <div class="card__button">
+      <button class="card__btn">View Details</button>
+    </div>
+      </div>
+    </a>
+  <div>
+</section>
+
+
+</body>
+</html>

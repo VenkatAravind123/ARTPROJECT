@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>ONLINE ART GALLERY</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.7em;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0.7rem;
+}
+
+.container {
+  max-width: 1100;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+.bg-primary {
+  background: #7ab436;
+  color: #fff;
+}
+
+.bg-light {
+  background: #d8d8d8;
+  color: #333;
+}
+
+.bg-dark {
+  background: #333;
+  color: #fff;
+}
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: #93cb52;
+}
+
+.l-heading {
+  font-size: 4rem;
+  padding: 0 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 3.5rem;
+}
+
+.m-heading {
+  font-size: 2rem;
+  padding: 0.75rem 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.8rem;
+}
+
+.py-1 {padding: 1.5rem 0;}
+.py-2 {padding: 2rem 0;}
+.py-3 {padding: 3rem 0;}
+
+.p-1 {padding: 1.5rem;}
+.p-2 {padding: 2rem;}
+.p-3 {padding: 3rem;}
+
+
+.btn {
+  display: inline-block;
+  color: #fff;
+  background: #93cb52;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.btn:hover {
+  background: #7ab436;
+}
+
+.btn-dark {
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  background: #333;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+}
+
+.list {
+  margin: 0.5rem 0;
+  list-style: none;
+}
+
+.list li {
+  padding: 0.5rem 0;
+  border-bottom: #444 dotted 1px;
+}
+
+.lead {
+  padding: 1 2rem;
+  line-height: 1.2rem;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background: #333;
+  color: #fff;
+  z-index: 1;
+  padding: 1rem;
+}
+
+#navbar ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+#navbar ul li a {
+  color: #fff;
+  padding: 0.75rem;
+  margin: 0 0.25rem;
+}
+
+#navbar ul li a:hover {
+  background: #93cb52;
+  border-radius: 5px;
+}
+
+#showcase {
+  background: #333 url("https://media.istockphoto.com/id/1190200652/photo/the-painter-hands.jpg?s=612x612&w=0&k=20&c=ejXBjL330H0_i7O90UaRnMqP2G-ZQLgI4XBeXxweWss=") no-repeat center center/cover;
+  height: 100vh;
+  color: #fff;
+}
+
+#showcase .showcase-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 2rem;
+  background: rgba(0,0,0,0.25)
+
+}
+
+.items {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+
+.item {
+  flex: 1;
+  text-align: center;
+  padding: 1rem;
+}
+
+.item i {
+  background: #7ab436;
+  padding: 1rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+#who {
+  display: flex;
+}
+
+#who div {
+  flex: 1;
+}
+
+#who .who-img {
+  background: url("https://github.com/Marko-91/mywebsite-edgeledger/blob/master/img/people.jpg?raw=true") no-repeat center center/cover;
+}
+
+#clients .items {
+  display: flex;
+}
+
+#clients .items img {
+  display: block;
+  margin: auto;
+  width: 60%;
+}
+
+#contacts {
+  display: flex;
+}
+
+#contacts .map,
+#contacts .contact-form {
+  flex: 1;
+}
+
+#contacts .contact-form .form-group {
+  margin: 0.75rem;
+}
+
+#contacts .contact-form label {
+  display: block;
+}
+
+#contacts .contact-form input,
+#contacts .contact-form input {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+@media only screen and (max-width: 480px) {
+
+#what .items {
+  display: block;
+  padding: 1rem;
+}
+
+#what .items .item {
+  display: flex;
+  text-align: left;
+
+}
+
+#what .items .item i {
+
+  align-self: center;
+  margin-bottom: 0;
+}
+
+#what .container .items h3 {
+  padding-top: 0.75rem;
+}
+
+#what .container .items p {
+  text-align: center;
+}
+
+#what .container h2 {
+  margin-bottom: 0;
+}
+
+@media (max-width: 501px) {
+  #navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #who {
+    flex-direction: column;
+  }
+
+  #who .who-img {
+    height: 100px;
+    padding: 30%
+  }
+
+  #contacts {
+    flex-direction: column;
+  }
+
+  #contacts .map{
+    height: 200px;
+    padding: 50%;
+  }
+}
+}
+#what .items .item i {
+  margin-right: 1.3rem;
+  align-self: center;
+
+}
+.logo {
+   display: inline-block; /* Allows the logo to appear inline with the text */
+   margin-right: 10px; /* Adjust the margin as needed to control spacing */
+}
+
+#contacts .map {
+  flex: 2;
+}
+  </style>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css">
+  <link rel="stylesheet" media="screen and (min-width: 1100px)" href="css/widescreen.css">
+</head>
+<body id="home">
+  <nav id="navbar">
+<h1 class="logo">
+  <div class="logo">
+    <img src="https://i.ibb.co/KG5tWBV/Whats-App-Image-2023-10-14-at-10-44-07-24eacdf0-p-oiuytdrew.jpg" alt="Whats-App-Image-2023-10-14-at-10-44-07-24eacdf0-p-oiuytdrew"border="0" width="35" height="35"></a>
+  </div>
+  <span class="text-primary">
+    ART HUB
+  </span>
+</h1>
+
+
+    <ul>
+      <li><a href="">Home</a></li>
+      <li><a href="{% url 'login' %}">Login</a></li>
+      <li><a href="{% url 'artistlogin' %}">Artist Login</a></li>
+      <li><a href="{% url 'customerlogin' %}">Customer Login</a></li>
+      <li><a href="#who">Who</a></li>
+      <li><a href="{% url 'contact' %}">Contacts</a></li>
+      <li><a href="{% url 'paintings'%}">Paintings</a></li>
+      <li><a href="#what">What</a></li>
+    </ul>
+  </nav>
+  <header id="showcase">
+    <div class="showcase-content">
+      <h1 class="l-heading">Art is the Colour to our life</h1>
+      <p class="lead"></p>
+      <a href="#what" class="btn">Read More</a>
+    </div>
+  </header>
+  <section id="what">
+    <div class="container bg-light">
+      <h2 class="m-heading text-center py-1"><span class="text-primary">What</span> We Do</h2>
+      <div class="items">
+        <div class="item">
+          <i class="fas fa-palette fa-2x"></i>
+            <h3>Showcase Arts of Different Forms</h3>
+            <p>You can find some arts which you really dont know!!</p>
+        </div>
+        <div class="item">
+            <i class="fas fa-box fa-2x"></i>
+            <h3>Deliver your ordered Art Piece to your location.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, quod!</p>
+        </div>
+        <div class="item">
+            <i class="fas fa-credit-card fa-2x"></i>
+            <h3>You can pay through different payment options</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, quod!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="who">
+    <div class="who-img"></div>
+    <div class="who-text bg-dark p-2">
+      <h2 class="m-heading"><span class="text-primary">Who</span> We Are</h2>
+      <p>We are the team of Developers,developed this website which gives information about Arts throughout the world.</p>
+      <h3>Our Team</h3>
+      <ul class="list">
+
+        <li>Founder1: D.Sai Ranganadha Charyulu</li>
+        <li>Founder2: N.Leela Prasad</li>
+        <li>Founder3: K.S.V Aravind</li>
+      </ul>
+    </div>
+  </section>
+
+<!--<div class="map">-->
+<!--  &lt;!&ndash; Add your QR code image here &ndash;&gt;-->
+<!--  <img src="https://ibb.co/K049VZD.jpg" alt="QR Code">-->
+<!--</div>-->
+
+<!-- Inserted image code --><h1>Contact Info</h1>
+<img src="https://i.ibb.co/VjnvMyx/Whats-App-Image-2023-10-14-at-10-48-12-767ccd02gyhgygfvgygy.jpg" alt="Whats-App-Image-2023-10-14-at-10-48-12-767ccd02gyhgygfvgygy" border="0"></a>
+
+  <footer class="main-footer bg-dark text-center py-1">
+    <div class="container">
+      <p>Copyright &copy; 2019,ONLINE ART GALLERY</p>
+    </div>
+  </footer>
+
+  <!-- JUQUERY-->
+
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+  <script src="js/main.js"></script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB98BScXkbHNu8bQW2XewS0OsHu0FI6fRk&callback=initMap"
+  async defer></script>
+  <script>
+    function initMap() {
+  const loc = {lat: 44.755270, lng:20.453090};
+  const map = new google.maps.Map(document.querySelector('.map'), {
+    center: loc,
+    zoom: 14
+  });
+
+const marker = new google.maps.Marker ({position: loc, map: map });
+
+}
+
+// Smooth Scrolling
+$('#navbar a, .btn').on('click', function(event) {
+  if (this.hash !== '') {
+    event.preventDefault();
+
+    const hash = this.hash;
+
+    $('html, body').animate(
+      {
+        scrollTop: $(hash).offset().top - 100
+      },
+      800
+    );
+  }
+});
+
+// Sticky menu background
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 150) {
+    document.querySelector('#navbar').style.opacity = 0.9;
+  } else {
+    document.querySelector('#navbar').style.opacity = 1;
+  }
+});
+  </script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

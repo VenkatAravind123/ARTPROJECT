@@ -1,0 +1,130 @@
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist {{artuname}}</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #90EE90;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            background-color: #90EE90;
+            padding: 10px 0;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .tab.active {
+            background-color: #fff;
+            color: #333;
+        }
+
+        /* Content */
+        #content {
+            padding: 20px;
+        }
+
+        /* Example: Style your content as needed */
+        .content-section {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .button-container {
+    text-align: center;
+}
+
+.centered-button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.centered-button:hover {
+    background-color: #90EE90;
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'myhome' %}">Home</a>
+            <a href="{% url 'artistprofile' %}">Profile</a>
+            <a href="{% url 'changepassword' %}">Change Password</a>
+            <a href="{% url 'paintings' %}">Paintings</a>
+            <a href="{% url 'sculptures' %}">Sculptures</a>
+            <a href="{% url 'artists' %}">Artists</a>
+            <a href="{% url 'artistlogin' %}">Logout</a>
+        </nav>
+    </header>
+
+
+    <!-- Content -->
+    <div id="content">
+        <div class="content-section">
+            <h1>Welcome {{artuname}} to our Arthub,</h1>
+        <div class="button-container">
+            <button class="centered-button">
+                <a href="{% url 'add_painting' %}" align="center">Add a Painting</a>
+            </button>
+            <button class="centered-button">
+                <a href="{% url 'add_sculpture' %}" align="center">Add Your Sculptures</a>
+            </button>
+        </div>
+        </div>
+    </div>
+</body>
+
+</html>

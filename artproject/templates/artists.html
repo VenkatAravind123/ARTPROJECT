@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artists</title>
+</head>
+<body>
+<h3 align="center"><u>View All Courses</u></h3>
+<br>
+<table align="center" border="2" width="50%" height="40%">
+    <tr bgcolor="red" align="center">
+        <td>Username</td>
+        <td>Gender</td>
+        <td>Email</td>
+        <td>Category</td>
+        <td>Phonenumber</td>
+        <td>Address</td>
+    </tr>
+    {% for artist in artists %}
+    <tr align="center">
+        <td>{{artist.username}}</td>
+        <td>{{artist.gender}}</td>
+         <td>{{artist.email}}</td>
+         <td>{{artist.category}}</td>
+         <td>{{artist.phonenumber}}</td>
+         <td>{{artist.address}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

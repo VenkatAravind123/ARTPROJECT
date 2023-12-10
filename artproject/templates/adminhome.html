@@ -1,0 +1,103 @@
+{% include 'navbar.html' %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{uname}} </title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #90EE90;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            background-color: #90EE90;
+            padding: 10px 0;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .tab.active {
+            background-color: #fff;
+            color: #333;
+        }
+
+        /* Content */
+        #content {
+            padding: 20px;
+        }
+
+        /* Example: Style your content as needed */
+        .content-section {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'myhome' %}">Home</a>
+            <a href="{% url 'changepassword' %}">Change Password</a>
+            <a href="{% url 'paintings' %}">Paintings</a>
+            <a href="{% url 'sculptures' %}">Sculptures</a>
+            <a href="{% url 'artists' %}">Artists</a>
+            <a href="{% url 'login' %}">Logout</a>
+        </nav>
+    </header>
+
+
+    <!-- Content -->
+    <div id="content">
+        <div class="content-section">
+            <h1>Welcome to Your Page</h1>
+            <p>This is the main content section of your page. You can add more content here.</p>
+        </div>
+    </div>
+</body>
+
+</html>
